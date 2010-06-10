@@ -3,6 +3,7 @@ require 'test_helper'
 require 'action_controller'
 require 'action_view'
 require 'action_view/helpers'
+require 'disable_asset_caching'
 
 class DisableAssetCachingTest < ActiveSupport::TestCase
   include ActionView::Helpers
