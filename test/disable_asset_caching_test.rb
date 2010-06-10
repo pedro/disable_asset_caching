@@ -19,4 +19,17 @@ class DisableAssetCachingTest < ActiveSupport::TestCase
       javascript_src_tag("application.js", {}),
       javascript_include_tag("application.js", :cache => true))
   end
+
+  test "stylesheet_link_tag doesn't change anything if cache is false" do
+    assert_equal(
+      stylesheet_tag("styles.css", {}),
+      stylesheet_link_tag("styles.css", :cache => false ))
+  end
+
+  test "stylesheet_link_tag doesn't change anything if cache is true" do
+    assert_equal(
+      stylesheet_tag("styles.css", {}),
+      stylesheet_link_tag("styles.css", :cache => true))
+
+  end
 end
