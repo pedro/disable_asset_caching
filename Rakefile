@@ -2,8 +2,10 @@ require 'rake'
 require 'rake/testtask'
 require 'rake/rdoctask'
 
+require 'load_multi_rails_rake_tasks'
+
 desc 'Default: run unit tests.'
-task :default => :test
+task :default => 'test:multi_rails:all'
 
 desc 'Test the disable_asset_caching plugin.'
 Rake::TestTask.new(:test) do |t|
